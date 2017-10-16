@@ -16,8 +16,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "aluno")
 public class Aluno {
-//Wandeir teste de commit 
-//hnfghpgf´gfgóg´sfoig´fgisgisg´f
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
