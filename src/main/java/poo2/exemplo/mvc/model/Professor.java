@@ -17,13 +17,8 @@ public class Professor {
 
 	@Column
 	private String nome;
+        
 	
-	@Column
-	private String cpf;
-	
-	@Column
-	private Integer idade;
-
 	public long getId() {
 		return id;
 	}
@@ -40,19 +35,5 @@ public class Professor {
 		this.nome = nome;
 	}
 
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public Integer getIdade() {
-		return idade;
-	}
-
-	public void setIdade(Integer idade) {
-		this.idade = idade;
-	}
+	
 }

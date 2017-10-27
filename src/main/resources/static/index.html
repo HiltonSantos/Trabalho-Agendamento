@@ -1,16 +1,68 @@
 <!DOCTYPE HTML>
 <html>
-<head> 
-    <title>Iniciando: Aplicações WEB</title> 
-    <meta http-equiv="Content-Type" 
-    	content="text/html; charset=UTF-8" />
-</head>
-<body>
-    <p>
-    	Seja Bem-Vindo!!! wandeir brutal
-    </p>
-    <a href="hello?name=Marcus">
-    	Clique para entrar!
-    </a>
-</body>
+    <head> 
+          <title>Projeto Agendamento</title>
+        <meta http-equiv="Content-Type" 
+            content="text/html; charset=UTF-8" />
+
+      <style>
+        body{
+          background-color : #04B4AE;      
+        }
+        #tela-login{
+          background-color: #1992b7;
+          width: 380px;
+          height:260px;
+          margin:140px auto 0px;
+          border-radius: 5px;
+        }
+        #tela-login-interno{
+          width: 360px;
+          height:240px;
+          background-color: white;
+          position: absolute;
+          margin:10px;
+          border-radius: 5px;
+          box-shadow: 0px 0px 30px black;
+          overflow: hidden;
+        }
+        #login-titulo{
+          background-color: #E6E6E6;
+          height:45px;
+          text-align: center;
+          font: bold 14px/45px sans-serif;
+
+          border-top-left-radius:5px;
+          border-top-right-radius:5px;
+          box-shadow: 1px 0px 3px black;
+        }
+        #input-usuario{
+            
+            width: 100%;
+            margin-left: 112px;
+            font: bold 14px/45px sans-serif;
+            
+        }
+      </style>
+    </head>
+    
+    <body>
+      
+       <div id = "tela-login">
+            <div id = "tela-login-interno">
+               <div id ="login-titulo">SISTEMA DE AGENDAMENTO</div>
+                  <div class = "input-div" id = "input-usuario">
+                     <input type = "text" value= "Usuario ou Email" />
+                  </div>
+                  <div class = "input-div" id = "input-senha">
+                     <input type = "text" value= "Senha" />
+                     
+                     <br><br><br><br><br><br>
+                     <a href="menu">Acessar</a>
+                  </div>
+
+            </div>
+       </div
+       
+    </body>
 </html>

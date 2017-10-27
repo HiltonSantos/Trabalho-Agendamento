@@ -6,24 +6,24 @@
 		content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<div class="alunos"
-		th:unless="${#lists.isEmpty(alunos)}">
-		<h2>Lista de Alunos</h2>
+	<div class="salas"
+		th:unless="${#lists.isEmpty(salas)}">
+		<h2>Lista de Salas</h2>
 		<table>
 			<thead>
 				<tr>
 					<th>Nome</th>
-					<th>cpf</th>
+					<th>Quantidade</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="aluno : ${alunos}">
-					<td th:text="${aluno.nome}"></td>
-					<td th:text="${aluno.cpf}"></td>
+				<tr th:each="sala : ${salas}">
+					<td th:text="${sala.nome}"></td>
+					<td th:text="${sala.quantidade}"></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<a href="hello?name=Marcus">Voltar</a>
+	<a href="CadastroSala">Voltar</a>
 </body>
 </html>

@@ -9,7 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import poo2.exemplo.mvc.model.Aluno;
+import poo2.exemplo.mvc.model.Sala;
 
 @Repository
 @Transactional
@@ -44,7 +44,7 @@ public class EntityDao<T> {
 		return getSession().load(cls, id);
 	}
 
-	public void update(Aluno aluno) {
+	public void update(Sala aluno) {
 		getSession().merge(aluno);
 		return;
 	}
