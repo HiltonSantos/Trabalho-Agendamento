@@ -1,7 +1,6 @@
 package poo2.exemplo.mvc.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,10 +33,10 @@ public class ProfessorController {
         return "novoprofessor";
     }
     
-    @GetMapping("/listarprofessor")
+    @GetMapping("/listaprofessor")
     public String listarprofessor(Model model) {
     	List<Professor> professores = professorDao.getAll(Professor.class);
     	model.addAttribute("professores", professores);
-        return "listarprofessor";
+        return "listaprofessor";
     }
 }

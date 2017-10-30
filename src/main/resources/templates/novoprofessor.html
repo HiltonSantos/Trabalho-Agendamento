@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Iniciando: Aplicações WEB</title> 
+    <meta http-equiv="Content-Type" 
+    	content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<label th:text="${message}"></label>
+	<form action="#" th:action="@{/salvarprofessor}" 
+		th:object="${professor}" method="post">
+		<label>Nome: </label>
+		<input type="text" th:field="*{nome}" />
+		
+		<button name="salvar" type="submit">Salvar</button>
+	</form>
+	<a href="CadastroProfessor">Voltar</a>
+</body>
+</html>

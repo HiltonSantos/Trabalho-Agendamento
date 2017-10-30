@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Iniciando: Aplicações WEB</title>
+	<meta http-equiv="Content-Type" 
+		content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div class="professores"
+		th:unless="${#lists.isEmpty(professores)}">
+		<h2>Lista de Professores</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="professor : ${professores}">
+					<td th:text="${professor.nome}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<a href="CadastroProfessor">Voltar</a>
+</body>
+</html>

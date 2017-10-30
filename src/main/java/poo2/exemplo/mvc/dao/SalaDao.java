@@ -1,11 +1,8 @@
 package poo2.exemplo.mvc.dao;
 
 import java.util.List;
-
 import javax.transaction.Transactional;
-
 import org.springframework.stereotype.Repository;
-
 import poo2.exemplo.mvc.model.Sala;
 
 @Repository

@@ -13,7 +13,12 @@ public class MenuController {
 
     
     @GetMapping("/CadastroSala")
-    public String home() {
+    public String sala() {
         return "CadastroSala";
+    }
+    
+    @GetMapping("/CadastroProfessor")
+    public String prof() {
+        return "CadastroProfessor";
     }
 }

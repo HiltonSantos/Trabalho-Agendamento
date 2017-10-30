@@ -1,14 +1,12 @@
 package poo2.exemplo.mvc.dao;
 
 import java.util.List;
-
 import javax.transaction.Transactional;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
+import poo2.exemplo.mvc.model.Professor;
 import poo2.exemplo.mvc.model.Sala;
 
 @Repository
@@ -44,8 +42,13 @@ public class EntityDao<T> {
 		return getSession().load(cls, id);
 	}
 
-	public void update(Sala aluno) {
-		getSession().merge(aluno);
+	public void update(Sala sala) {
+		getSession().merge(sala);
+		return;
+	}
+        
+        public void update(Professor professor) {
+		getSession().merge(professor);
 		return;
 	}
 }
