@@ -2,7 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head> 
     <title>Iniciando: Aplicações WEB</title> 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/style.default.css" type="text/css" />
+<link rel="stylesheet" href="/css/style.shinyblue.css" type="text/css" />
+
+<script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.9.2.min.js"></script>
+<script type="text/javascript" src="/js/modernizr.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/plugins/ui/jquery.timepicker.min.js"></script>
+
+<script type="text/javascript" src="/js/custom.js"></script>
+<script type="text/javascript" src="js/plugins/ui/jquery.fullcalendar.min.js"></script>
+
+    
 </head>
 <body>
     
@@ -28,6 +43,20 @@
 		<label> Vagas(Capac de Alunos): </label>
 		<input type="text" th:field="*{vagas}" />
                 </div>
+                <!-- Datepicker -->
+	                    <div class="widget">
+	                        <div class="navbar">
+	                            <div class="navbar-inner">
+	                                <h6>Datepicker</h6>
+	                                <div class="pick-a-date no-append">
+	                                	<input type="text" class="navbar-datepicker" placeholder="select date..." />
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="well body">For input field use <code>class="navbar-datepicker"</code></div>
+	                    </div>
+	                    <!-- /datepicker -->
+                
                 <div>
                 <div>
                 <label> Status: </label>
