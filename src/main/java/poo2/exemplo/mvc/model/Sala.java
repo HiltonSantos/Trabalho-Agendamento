@@ -12,6 +12,8 @@ import javax.persistence.Table;
 @Table(name = "sala")
 public class Sala {
 
+  
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -20,7 +22,13 @@ public class Sala {
 	private String nome;
 	
 	@Column
-	private String quantidade;
+	private String vagas;
+        
+        @Column
+	private String progInstalados ;
+        
+        @Column
+	private String status;
 
     /**
      * @return the id
@@ -50,20 +58,49 @@ public class Sala {
         this.nome = nome;
     }
 
+    
+
     /**
-     * @return the quantidade
+     * @return the progInstalados
      */
-    public String getQuantidade() {
-        return quantidade;
+    public String getProgInstalados() {
+        return progInstalados;
     }
 
     /**
-     * @param quantidade the quantidade to set
+     * @param progInstalados the progInstalados to set
      */
-    public void setQuantidade(String quantidade) {
-        this.quantidade = quantidade;
+    public void setProgInstalados(String progInstalados) {
+        this.progInstalados = progInstalados;
     }
-	
+
+    /**
+     * @return the status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    /**
+     * @param status the status to set
+     */
+    public void setStatus(String status) {
+        this.status = status;
+    }
+  /**
+     * @return the vagas
+     */
+    public String getVagas() {
+        return vagas;
+    }
+
+    /**
+     * @param vagas the vagas to set
+     */
+    public void setVagas(String vagas) {
+        this.vagas = vagas;
+    }
+    
 	
         
 	

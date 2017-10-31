@@ -17,6 +17,9 @@ public class Professor {
 
 	@Column
 	private String nome;
+        
+        @Column
+	private String matricula;
 
     /**
      * @return the id
@@ -44,6 +47,20 @@ public class Professor {
      */
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    /**
+     * @return the matricula
+     */
+    public String getMatricula() {
+        return matricula;
+    }
+
+    /**
+     * @param matricula the matricula to set
+     */
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
         
 	

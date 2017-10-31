@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import poo2.exemplo.mvc.dao.SalaDao;
 import poo2.exemplo.mvc.model.Sala;
 
@@ -38,4 +39,32 @@ public class SalaController {
     	model.addAttribute("salas", salas);
         return "listasalas";
     }
+    
+    @GetMapping("/editarsala")
+    public String editarsala(
+    		@RequestParam(value="id") long id,
+    		Model model) {
+    	Sala sala = salaDao.getById(Sala.class, id);
+    	model.addAttribute("sala", sala);
+    	
+    	List<Sala> salas = salaDao.getAll(Sala.class);
+    	model.addAttribute("salas", salas);
+        return "novasala";
+    }
+    
+    @GetMapping("/removersala")
+    public String removersala(
+    		@RequestParam(value="id") long id,
+    		Model model) {
+    	Sala salas = salaDao.getById(Sala.class, id);
+    	if(salas != null)
+    		salaDao.delete(salas);
+    	model.addAttribute("message", 
+    			"Sala removido com sucesso!");
+    	List<Sala> salass = salaDao.getAll(Sala.class);
+    	model.addAttribute("salass", salass);
+    	model.addAttribute("salaPesquisa", new Sala());
+    	return "listasalas";
+    }
+
 }

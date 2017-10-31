@@ -9,10 +9,19 @@
 	<label th:text="${message}"></label>
 	<form action="#" th:action="@{/salvarsala}" 
 		th:object="${sala}" method="post">
-		<label>Nome: </label>
+		<label> Nome: </label>
 		<input type="text" th:field="*{nome}" />
-		<label>quantidade </label>
-		<input type="text" th:field="*{quantidade}" />
+		<label> Vagas(Capacidade de Alunos): </label>
+		<input type="text" th:field="*{vagas}" />
+                <label> Programas Instalados: </label>
+		<input type="text" th:field="*{progInstalados}" />
+                <label> Status: </label>
+                    <select type="text" th:field="*{status}">
+                        <option value="Ativo">Ativo</option>
+                        <option value="Desativado">Desativado</option>
+                        <option value="Em Manutenção">Em Manutenção</option>
+                    </select>
+                
 		<button name="salvar" type="submit">Salvar</button>
 	</form>
 	<a href="CadastroSala">Voltar</a>

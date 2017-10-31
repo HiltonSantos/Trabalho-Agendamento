@@ -13,13 +13,22 @@
 			<thead>
 				<tr>
 					<th>Nome</th>
-					<th>Quantidade</th>
+					<th>Vagas</th>
+                                        <th>Prog. Instalados</th>
+                                        <th>Status</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="sala : ${salas}">
 					<td th:text="${sala.nome}"></td>
-					<td th:text="${sala.quantidade}"></td>
+					<td th:text="${sala.vagas}"></td>
+                                        <td th:text="${sala.progInstalados}"></td>
+                                        <td th:text="${sala.status}"></td>
+                                        
+                                        <td>
+						<a th:href="@{'editarsala?id=' + ${sala.id}}">Editar</a>
+						<a th:href="@{'removersala?id=' + ${sala.id}}">Excluir</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>

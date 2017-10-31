@@ -11,6 +11,8 @@
 		th:object="${professor}" method="post">
 		<label>Nome: </label>
 		<input type="text" th:field="*{nome}" />
+                <label>Matricula: </label>
+		<input type="text" th:field="*{matricula}" />
 		
 		<button name="salvar" type="submit">Salvar</button>
 	</form>

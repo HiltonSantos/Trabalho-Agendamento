@@ -13,6 +13,7 @@ public class ProfessorDao extends EntityDao<Professor>{
 	public Professor getByCpf(String id) {
 		List<Professor> profs = super.getSession().createQuery("from Professor a "
 				+ "left join fetch a.nome "
+                                + "left join fetch a.matricula "
 				+ "where a.id = :id")
 				.setParameter("id", id).list();
 		if(profs.size() == 1)

@@ -6,6 +6,7 @@
 		content="text/html; charset=UTF-8" />
 </head>
 <body>
+    
 	<div class="professores"
 		th:unless="${#lists.isEmpty(professores)}">
 		<h2>Lista de Professores</h2>
@@ -13,11 +14,18 @@
 			<thead>
 				<tr>
 					<th>Nome</th>
+                                        <th>Matricula</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="professor : ${professores}">
 					<td th:text="${professor.nome}"></td>
+                                        <td th:text="${professor.matricula}"></td>
+                                        
+                                        <td>
+						<a th:href="@{'editarprofessor?id=' + ${professor.id}}">Editar</a>
+						<a th:href="@{'removerprofessor?id=' + ${professor.id}}">Excluir</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>

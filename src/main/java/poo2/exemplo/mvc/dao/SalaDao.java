@@ -13,7 +13,10 @@ public class SalaDao extends EntityDao<Sala>{
 	public Sala getByCpf(String id) {
 		List<Sala> salas = super.getSession().createQuery("from Sala a "
 				+ "left join fetch a.nome mt "
-				+ "left join fetch mt.quantidade q "
+				+ "left join fetch mt.vagas q "
+                                + "left join fetch mt.progInstalados p"
+                                + "left join fetch mt.status s "
+                        
 				+ "where a.id = :id")
 				.setParameter("id", id).list();
 		if(salas.size() == 1)
