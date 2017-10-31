@@ -29,6 +29,9 @@ public class Sala {
         
         @Column
 	private String status;
+        
+        @Column
+	private String observacao;
 
     /**
      * @return the id
@@ -93,6 +96,10 @@ public class Sala {
     public String getVagas() {
         return vagas;
     }
+    
+    public String getObservacao() {
+        return observacao;
+    }
 
     /**
      * @param vagas the vagas to set
@@ -101,6 +108,9 @@ public class Sala {
         this.vagas = vagas;
     }
     
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
 	
         
 	

@@ -6,6 +6,14 @@
 		content="text/html; charset=UTF-8" />
 </head>
 <body>
+    
+    <style>
+        table{
+          border: 1px solid #040404;
+          
+        }  
+        
+    </style>
 	<div class="salas"
 		th:unless="${#lists.isEmpty(salas)}">
 		<h2>Lista de Salas</h2>
@@ -15,6 +23,7 @@
 					<th>Nome</th>
 					<th>Vagas</th>
                                         <th>Prog. Instalados</th>
+                                        <th>Observação</th>
                                         <th>Status</th>
 				</tr>
 			</thead>
@@ -23,7 +32,9 @@
 					<td th:text="${sala.nome}"></td>
 					<td th:text="${sala.vagas}"></td>
                                         <td th:text="${sala.progInstalados}"></td>
+                                        <td th:text="${sala.observacao}"></td>
                                         <td th:text="${sala.status}"></td>
+                                       
                                         
                                         <td>
 						<a th:href="@{'editarsala?id=' + ${sala.id}}">Editar</a>

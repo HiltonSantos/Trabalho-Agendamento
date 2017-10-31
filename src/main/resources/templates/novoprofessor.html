@@ -6,16 +6,45 @@
     	content="text/html; charset=UTF-8" />
 </head>
 <body>
+    
+    <style>
+        input {
+	position: absolute; 
+	left: 140px;
+        }
+    </style>
+    
 	<label th:text="${message}"></label>
-	<form action="#" th:action="@{/salvarprofessor}" 
-		th:object="${professor}" method="post">
-		<label>Nome: </label>
-		<input type="text" th:field="*{nome}" />
-                <label>Matricula: </label>
-		<input type="text" th:field="*{matricula}" />
-		
-		<button name="salvar" type="submit">Salvar</button>
+	<form action="#" th:action="@{/salvarprofessor}" th:object="${professor}" method="post">
+             <fieldset>
+                <legend>Cadastro de Professor</legend>
+                <div>
+                    <label>Nome: </label>
+                    <input type="text" th:field="*{nome}" />
+                </div>                 
+                <div>
+                    <label>Identificação </label>
+                    <input type="text" th:field="*{matricula}" />
+		</div>               
+                <div>
+                    <label>Turno: </label>
+                    <input type="text" th:field="*{turno}" />
+		</div>
+                 <div>
+                    <label>Disciplinas: </label>
+                    <textarea type="text" th:field="*{disciplinas}" rows="4" cols="50">
+                    </textarea>
+		</div>
+                <div>
+                <label>Observação: </label>
+		<textarea type="text" th:field="*{observacao}" rows="4" cols="50">
+                </textarea>
+                </div>      
+               <br></br><br></br>
+                <button name="salvar" type="submit">Salvar</button>
+                <button><a style="text-decoration:none #040404"  href="CadastroProfessor">Voltar</a></button>                
+                <p></p>               
+            </fieldset>
 	</form>
-	<a href="CadastroProfessor">Voltar</a>
 </body>
 </html>

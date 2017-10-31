@@ -2,28 +2,85 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head> 
     <title>Iniciando: Aplicações WEB</title> 
-    <meta http-equiv="Content-Type" 
-    	content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/style.default.css" type="text/css" />
+<link rel="stylesheet" href="/css/style.shinyblue.css" type="text/css" />
+
+<script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.9.2.min.js"></script>
+<script type="text/javascript" src="/js/modernizr.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/plugins/ui/jquery.timepicker.min.js"></script>
+
+<script type="text/javascript" src="/js/custom.js"></script>
+<script type="text/javascript" src="js/plugins/ui/jquery.fullcalendar.min.js"></script>
+
+    
 </head>
 <body>
+    
+    <style>
+        input {
+	position: absolute; 
+	left: 190px;
+        }
+        select {
+	position: absolute; 
+	left: 190px;
+        }
+    </style>
 	<label th:text="${message}"></label>
-	<form action="#" th:action="@{/salvarsala}" 
-		th:object="${sala}" method="post">
-		<label> Nome: </label>
-		<input type="text" th:field="*{nome}" />
-		<label> Vagas(Capacidade de Alunos): </label>
+	<form action="#" th:action="@{/salvarsala}" th:object="${sala}" method="post">
+            <fieldset>
+                <legend>Cadastro de Sala</legend>
+                <div>
+		<label> Identificação da Sala: </label>
+		<input type="text" th:field="*{nome}" size="20" />
+                </div>
+                <div>
+		<label> Vagas(Cap de Alunos): </label>
 		<input type="text" th:field="*{vagas}" />
-                <label> Programas Instalados: </label>
-		<input type="text" th:field="*{progInstalados}" />
+                </div>
+                <!-- Datepicker -->
+	                    <div class="widget">
+	                        <div class="navbar">
+	                            <div class="navbar-inner">
+	                                <h6>Datepicker</h6>
+	                                <div class="pick-a-date no-append">
+	                                	<input type="text" class="navbar-datepicker" placeholder="select date..." />
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="well body">For input field use <code>class="navbar-datepicker"</code></div>
+	                    </div>
+	                    <!-- /datepicker -->
+                
+                <div>
+                <div>
                 <label> Status: </label>
                     <select type="text" th:field="*{status}">
                         <option value="Ativo">Ativo</option>
                         <option value="Desativado">Desativado</option>
                         <option value="Em Manutenção">Em Manutenção</option>
                     </select>
-                
-		<button name="salvar" type="submit">Salvar</button>
+                <div>
+                <label> Programas Instalados: </label>
+		<textarea type="text" th:field="*{progInstalados}" rows="4" cols="50">
+                </textarea>
+                </div>                
+                <label> Observação: </label>
+                <textarea type="text" th:field="*{observacao}" rows="4" cols="50">                
+                </textarea>
+                </div>
+                <br></br><br></br>
+                <button name="salvar" type="submit">Salvar</button>
+                <button><a style="text-decoration:none #040404"  href="CadastroSala">Voltar</a></button>
+                </div>
+                <p></p>               
+            </fieldset>
 	</form>
-	<a href="CadastroSala">Voltar</a>
+	
 </body>
 </html>

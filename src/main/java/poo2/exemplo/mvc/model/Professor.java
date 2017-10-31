@@ -20,7 +20,15 @@ public class Professor {
         
         @Column
 	private String matricula;
+        
+        @Column
+	private String disciplinas;
+        
+        @Column
+	private String turno;
 
+        @Column
+	private String observcao;
     /**
      * @return the id
      */
@@ -41,6 +49,18 @@ public class Professor {
     public String getNome() {
         return nome;
     }
+    
+    public String getDisciplinas() {
+        return disciplinas;
+    }
+    
+    public String getTurno() {
+        return turno;
+    }
+    
+    public String getObservacao() {
+        return observcao;
+    }
 
     /**
      * @param nome the nome to set
@@ -48,7 +68,19 @@ public class Professor {
     public void setNome(String nome) {
         this.nome = nome;
     }
+    
+    public void setDisciplinas(String disciplinas) {
+        this.disciplinas = disciplinas;
+    }
+    
+    public void setTurno(String turno) {
+        this.turno = turno;
+    }
 
+     public void setObservacao(String observacao) {
+        this.observcao = observacao;
+    }
+    
     /**
      * @return the matricula
      */

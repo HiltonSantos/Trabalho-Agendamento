@@ -7,6 +7,14 @@
 </head>
 <body>
     
+    <style>
+        table{
+          border: 1px solid #040404;
+          
+        }  
+        
+    </style>
+    
 	<div class="professores"
 		th:unless="${#lists.isEmpty(professores)}">
 		<h2>Lista de Professores</h2>
@@ -14,13 +22,19 @@
 			<thead>
 				<tr>
 					<th>Nome</th>
-                                        <th>Matricula</th>
+                                        <th>Identificação</th>
+                                        <th>Disciplinas</th>
+                                        <th>Observação</th>
+                                        <th>Turno</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="professor : ${professores}">
+                            <tr th:each="professor : ${professores}">
 					<td th:text="${professor.nome}"></td>
                                         <td th:text="${professor.matricula}"></td>
+                                        <td th:text="${professor.disciplinas}"></td>
+                                        <td th:text="${professor.observacao}"></td>
+                                        <td th:text="${professor.turno}"></td>
                                         
                                         <td>
 						<a th:href="@{'editarprofessor?id=' + ${professor.id}}">Editar</a>
