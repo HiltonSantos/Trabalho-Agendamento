@@ -10,7 +10,7 @@ import poo2.exemplo.mvc.model.Sala;
 public class SalaDao extends EntityDao<Sala>{
 
 	@SuppressWarnings("unchecked")
-	public Sala getByCpf(String id) {
+	public Sala getById(String id) {
 		List<Sala> salas = super.getSession().createQuery("from Sala a "
 				+ "left join fetch a.nome mt "
 				+ "left join fetch mt.vagas q "

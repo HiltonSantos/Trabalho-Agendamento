@@ -31,7 +31,9 @@ public class SalaController {
     	model.addAttribute("message", 
     			"Sala criado com sucesso!");
         return "novasala";
+        
     }
+    
     
     @GetMapping("/listasalas")
     public String listarsala(Model model) {
@@ -44,11 +46,11 @@ public class SalaController {
     public String editarsala(
     		@RequestParam(value="id") long id,
     		Model model) {
-    	Sala sala = salaDao.getById(Sala.class, id);
-    	model.addAttribute("sala", sala);
+    	Sala sala2 = salaDao.getById(Sala.class, id);
+    	model.addAttribute("sala2", sala2);
     	
-    	List<Sala> salas = salaDao.getAll(Sala.class);
-    	model.addAttribute("salas", salas);
+    	List<Sala> sala01 = salaDao.getAll(Sala.class);
+    	model.addAttribute("sala01", sala01);
         return "novasala";
     }
     
