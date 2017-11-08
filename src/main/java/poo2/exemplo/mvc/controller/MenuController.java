@@ -21,4 +21,10 @@ public class MenuController {
     public String prof() {
         return "CadastroProfessor";
     }
+    
+    @GetMapping("/CadastroAgendamento")
+    public String agen() {
+        return "CadastroAgendamento";
+    }
 }
+

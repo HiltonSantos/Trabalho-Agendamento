@@ -1,0 +1,64 @@
+package poo2.exemplo.mvc.controller;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import poo2.exemplo.mvc.dao.AgendamentoDao;
+import poo2.exemplo.mvc.model.Agendamento;
+
+
+@Controller
+public class AgendamentoController {
+	
+	@Autowired
+	private AgendamentoDao agendamentoDao;
+
+	@GetMapping("/novoagendamento")
+    public String novoagendamento(Model model) {
+    	model.addAttribute("agendamento", new Agendamento());
+        return "novoagendamento";
+        
+    }
+    
+    @PostMapping("/salvaragendamento")
+    public String salvaragendamento(
+    		@ModelAttribute Agendamento agendamento, 
+    		Model model) {
+    	agendamentoDao.create(agendamento);
+    	model.addAttribute("message", 
+    			"Agendamento criado com sucesso!");
+        return "novoagendamento";
+        
+    }
+    
+    
+    @GetMapping("/listaragendamento")
+    public String listaragendamento(Model model) {
+    	List<Agendamento> agendamentos = agendamentoDao.getAll(Agendamento.class);
+    	model.addAttribute("agendamentos", agendamentos);
+        return "listaragendamento";
+    }
+    
+   
+    
+    @GetMapping("/removeragendamento")
+    public String removeragendamento(
+    		@RequestParam(value="id") long id,
+    		Model model) {
+    	Agendamento agendamentos = agendamentoDao.getById(Agendamento.class, id);
+    	if(agendamentos != null)
+    		agendamentoDao.delete(agendamentos);
+    	model.addAttribute("message", 
+    			"Agendamento removido com sucesso!");
+    	List<Agendamento> agendamentoss = agendamentoDao.getAll(Agendamento.class);
+    	model.addAttribute("agendamentos", agendamentos);
+    	
+    	return "listaragendamento";
+    }
+
+}

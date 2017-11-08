@@ -5,7 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "professor")
@@ -29,6 +31,14 @@ public class Professor {
 
         @Column
 	private String observcao;
+        
+        
+        @OneToMany
+        private List<Agendamento> agendamentos;
+      
+       
+        
+        
     /**
      * @return the id
      */
@@ -94,7 +104,22 @@ public class Professor {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
-        
+
+    /**
+     * @return the agendamentos
+     */
+    public List<Agendamento> getAgendamentos() {
+        return agendamentos;
+    }
+
+    /**
+     * @param agendamentos the agendamentos to set
+     */
+    public void setAgendamentos(List<Agendamento> agendamentos) {
+        this.agendamentos = agendamentos;
+    }
+
+    
 	
 	
 	

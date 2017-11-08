@@ -1,11 +1,14 @@
 package poo2.exemplo.mvc.model;
 
 
+
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -33,6 +36,12 @@ public class Sala {
         @Column
 	private String observacao;
 
+        @OneToMany
+        private List<Agendamento> agendamentos;
+       
+        
+        
+        
     /**
      * @return the id
      */
@@ -110,6 +119,20 @@ public class Sala {
     
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    /**
+     * @return the agendamentos
+     */
+    public List<Agendamento> getAgendamentos() {
+        return agendamentos;
+    }
+
+    /**
+     * @param agendamentos the agendamentos to set
+     */
+    public void setAgendamentos(List<Agendamento> agendamentos) {
+        this.agendamentos = agendamentos;
     }
 	
         
