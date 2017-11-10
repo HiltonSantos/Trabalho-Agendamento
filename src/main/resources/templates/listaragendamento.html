@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -14,8 +13,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </head>
-
-
 <body>
     
     <div class="container">
@@ -58,7 +55,44 @@
             </div>
         </nav>
     </div>
-   
-
+    
+    <br></br><br></br>
+    
+    <div class="container">
+	
+		<label th:text="${message}"></label>
+		<h2>Lista de Agendamentos</h2>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Professor:</th>
+					<th>Sala:</th>
+                                        <th>Data:</th>
+                                        <th>Hora:</th>
+                                        <th>Observação:</th>
+                                        <th>Status:</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="agendamento : ${agendamentos}">
+					<td th:text="${agendamento.professor}"></td>
+					<td th:text="${agendamento.sala}"></td>
+                                        <td th:text="${agendamento.data}"></td>
+                                        <td th:text="${agendamento.hora}"></td>
+                                        <td th:text="${agendamento.observacao}"></td>
+                                        <td th:text="${agendamento.status}"></td>
+                                        <td><a class="btn btn-default"
+						th:href="@{'editaragendamento?id=' + ${agendamento.id}}">Editar</a> <a
+						class="btn btn-default"
+						th:href="@{'removeragendamento?id=' + ${agendamento.id}}">Excluir</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="footer">
+			<div class="pull-right" style="margin-top: 5%">
+				<a href="menu" class="btn btn-default">Voltar</a>
+			</div>
+		</div>
+           </div>     
 </body>
 </html>

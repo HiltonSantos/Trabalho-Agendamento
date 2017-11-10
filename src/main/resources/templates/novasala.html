@@ -14,6 +14,50 @@
 </head>
 <body>
     
+    <div class="container">
+       <nav class="navbar navbar-expand-lg navbar-dark bg-primary"> 
+            <div class="navbar-nav">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            CADASTRO DE SALA
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/novasala">Adicionar Salas</a>
+                            <a class="dropdown-item" href="/listasalas">Listar Salas</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            CADASTRO DE PROFESSOR
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/novoprofessor">Adicionar Professor</a>
+                            <a class="dropdown-item" href="/listaprofessor">Listar Professor</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            AGENDAR
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/novoagendamento">Adicionar Agendamento</a>
+                            <a class="dropdown-item" href="/listaragendamento">Listar Agendamento</a>
+                        </div>
+                    </li>
+
+                </div>
+                
+                <a class="nav-item nav-link" href="#">SAIR</a>
+            </div>
+        </nav>
+    </div>
+    
+    
+    
+    
     <span class="badge badge-pill badge-success"><label th:text="${message}"></label></span>
        
    
@@ -52,7 +96,7 @@
   
   <br></br><br></br>
   <input class="btn btn-primary" type="submit" value="Salvar"/>
-  <a class="btn btn-primary" href="CadastroSala" role="button">Voltar</a>
+  <a class="btn btn-primary" href="menu" role="button">Voltar</a>
 </form>
 </body>
 </html>

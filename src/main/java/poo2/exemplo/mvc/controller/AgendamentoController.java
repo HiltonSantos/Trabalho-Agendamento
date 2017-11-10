@@ -56,8 +56,8 @@ public class AgendamentoController {
     	model.addAttribute("message", 
     			"Agendamento removido com sucesso!");
     	List<Agendamento> agendamentoss = agendamentoDao.getAll(Agendamento.class);
-    	model.addAttribute("agendamentos", agendamentos);
-    	
+    	model.addAttribute("agendamentoss", agendamentoss);
+    	model.addAttribute("agendamentoPesquisa", new Agendamento());
     	return "listaragendamento";
     }
 

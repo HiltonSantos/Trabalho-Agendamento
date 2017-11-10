@@ -1,23 +1,69 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Iniciando: Aplicações WEB</title>
-	<meta http-equiv="Content-Type" 
-		content="text/html; charset=UTF-8" />
+<title>Iniciando: Aplicações WEB</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </head>
 <body>
     
-    <style>
-        table{
-          border: 1px solid #040404;
-          
-        }  
-        
-    </style>
-	<div class="salas"
-		th:unless="${#lists.isEmpty(salas)}">
+    <div class="container">
+       <nav class="navbar navbar-expand-lg navbar-dark bg-primary"> 
+            <div class="navbar-nav">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            CADASTRO DE SALA
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/novasala">Adicionar Salas</a>
+                            <a class="dropdown-item" href="/listasalas">Listar Salas</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            CADASTRO DE PROFESSOR
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/novoprofessor">Adicionar Professor</a>
+                            <a class="dropdown-item" href="/listaprofessor">Listar Professor</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            AGENDAR
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/novoagendamento">Adicionar Agendamento</a>
+                            <a class="dropdown-item" href="/listaragendamento">Listar Agendamento</a>
+                        </div>
+                    </li>
+
+                </div>
+                
+                <a class="nav-item nav-link" href="#">SAIR</a>
+            </div>
+        </nav>
+    </div>
+    
+    <br></br><br></br>
+    
+    
+	<div class="container">
+	                
+                <label th:text="${message}"></label>
 		<h2>Lista de Salas</h2>
-		<table>
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>Nome</th>
@@ -34,16 +80,18 @@
                                         <td th:text="${sala.progInstalados}"></td>
                                         <td th:text="${sala.observacao}"></td>
                                         <td th:text="${sala.status}"></td>
-                                       
-                                        
-                                        <td>
-						<a th:href="@{'editarsala?id=' + ${sala.id}}">Editar</a>
-						<a th:href="@{'removersala?id=' + ${sala.id}}">Excluir</a>
-					</td>
+                                        <td><a class="btn btn-default"
+						th:href="@{'editarsala?id=' + ${sala.id}}">Editar</a> 
+                                            <a class="btn btn-default"
+						th:href="@{'removersala?id=' + ${sala.id}}">Excluir</a></td>
 				</tr>
 			</tbody>
 		</table>
-	</div>
-	<a href="CadastroSala">Voltar</a>
+		<div class="footer">
+			<div class="pull-right" style="margin-top: 5%">
+				<a href="menu" class="btn btn-default">Voltar</a>
+			</div>
+		</div>
+           </div>     
 </body>
 </html>
