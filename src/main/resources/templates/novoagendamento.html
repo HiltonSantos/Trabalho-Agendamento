@@ -67,7 +67,7 @@
     <div class="form-group col-md-2">   
         <label for="exampleFormControlInput1"> Professor: </label>
         <select th:field="*{professor.id}"  size="1" class="form-control" id="exampleFormControlInput1">
-            <option th:each="professor : ${professor}" th:value="${professor.getId()}" 
+            <option th:each="professor : ${professores}" th:value="${professor.getId()}" 
             th:text="${professor.getNome()}">Professor</option>
 	</select>
     </div>
@@ -75,7 +75,7 @@
     <div class="form-group col-md-2">     
         <label for="exampleFormControlInput1"> Sala: </label>
         <select th:field="*{sala.id}" size="1" class="form-control" id="exampleFormControlInput1">
-            <option th:each="sala : ${sala}" th:value="${sala.getId()}" 
+            <option th:each="sala : ${salas}" th:value="${sala.getId()}" 
             th:text="${sala.getNome()}">Sala</option>
 	</select>
         

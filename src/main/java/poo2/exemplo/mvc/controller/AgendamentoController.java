@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import poo2.exemplo.mvc.dao.AgendamentoDao;
+import poo2.exemplo.mvc.dao.ProfessorDao;
+import poo2.exemplo.mvc.dao.SalaDao;
 import poo2.exemplo.mvc.model.Agendamento;
+import poo2.exemplo.mvc.model.Professor;
+import poo2.exemplo.mvc.model.Sala;
 
 
 @Controller
@@ -17,10 +22,26 @@ public class AgendamentoController {
 	
 	@Autowired
 	private AgendamentoDao agendamentoDao;
+        
+        @Autowired
+	private ProfessorDao professorDao;
+        
+        @Autowired
+	private SalaDao salaDao;
 
 	@GetMapping("/novoagendamento")
-    public String novoagendamento(Model model) {
+        public String novoagendamento(Model model) {
     	model.addAttribute("agendamento", new Agendamento());
+        return "novoagendamento";
+        
+        
+        List<Professor> professores = professorDao.getAll(Professor.class);
+    	model.addAttribute("professores", professores);
+        return "novoagendamento";
+        
+       
+        List<Sala> salas = salaDao.getAll(Sala.class);
+    	model.addAttribute("salas", salas);
         return "novoagendamento";
         
     }
