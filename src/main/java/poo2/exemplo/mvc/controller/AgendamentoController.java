@@ -31,14 +31,10 @@ public class AgendamentoController {
 
 	@GetMapping("/novoagendamento")
         public String novoagendamento(Model model) {
-    	model.addAttribute("agendamento", new Agendamento());
-        return "novoagendamento";
-        
+    	model.addAttribute("agendamento", new Agendamento());  
         
         List<Professor> professores = professorDao.getAll(Professor.class);
-    	model.addAttribute("professores", professores);
-        return "novoagendamento";
-        
+    	model.addAttribute("professores", professores);       
        
         List<Sala> salas = salaDao.getAll(Sala.class);
     	model.addAttribute("salas", salas);
