@@ -3,6 +3,10 @@
 <head> 
     <title>Iniciando: Aplicações WEB</title> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"></link>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
@@ -63,40 +67,53 @@
    
 	
 	<form action="#" th:action="@{/salvarsala}" th:object="${sala}" method="post">
-            <div align="center"><h2>Cadastro de Salas</h2></div>
+            <h1> <div align="center">Cadastro de Salas</div></h1>
+            
+         
    <div class="form-group">
     
-    <div class="form-group col-md-2">   
-        <label for="exampleFormControlInput1">Identificação da Sala: </label>
+        
+    <div class="form-group col-md-2 ">   
+        <h3> <label for="exampleFormControlInput1">Identificação da Sala:</label> </h3>
         <input type="text" th:field="*{nome}" size="20" class="form-control" id="exampleFormControlInput1" />
     </div>
-    <div class="form-group col-md-2">     
-        <label for="exampleFormControlInput1">Vagas(Capac de Alunos): </label>
-        <input type="text" th:field="*{vagas}" class="form-control" id="exampleFormControlInput1"/>
+          
+    <div class="col-sm-1">     
+        <h3>  <label for="exampleFormControlInput1">Quantidade: </label> </h3>
+        <input type="text" th:field="*{vagas}" size=50 class="form-control" id="exampleFormControlInput1"/>
     </div>
     
-  </div>   
+   
   
-  <div class="form-group col-md-2">
-    <label for="exampleFormControlSelect1">Status</label>
-    <select type="text" th:field="*{status}" class="form-control" id="exampleFormControlSelect1">
-      <option value="Ativo">Ativo</option>
+  <div class="col-sm-2">
+      <h3> <label for="exampleFormControlSelect1"> Status</label></h3>
+    <select type="text" th:field="*{status}" size=""  class="form-control" id="exampleFormControlSelect1">
+         <option value="Ativo">Ativo</option>  
       <option value="Desativado">Desativado</option>
       <option value="Em Manutenção">Em Manutenção</option>
     </select>
   </div>
-  
-  <div class="form-group col-md-2">
-    <label for="exampleFormControlTextarea1">Programas Instalados:</label>
-    <textarea type="text" th:field="*{progInstalados}" class="form-control" id="exampleFormControlTextarea1" rows="3" cols="50"></textarea>
-  
-    <label for="exampleFormControlTextarea1">Observação: </label>
-    <textarea type="text" th:field="*{observacao}" class="form-control" id="exampleFormControlTextarea1" rows="3" cols="50"></textarea>
+              
+  <br></br><br></br><br></br><br></br>  
+  <div class="col-sm-3">
+      <h3>  <label for="exampleFormControlTextarea1">Programas Instalados:</label></h3>
+    <textarea type="text" th:field="*{progInstalados}" class="form-control" id="exampleFormControlTextarea1" rows="5" cols="80"></textarea>
   </div>
-  
-  <br></br><br></br>
+  <div class="col-sm-3">
+      <h3>  <label for="exampleFormControlTextarea1">Observação: </label> </h3>
+    <textarea type="text" th:field="*{observacao}" class="form-control" id="exampleFormControlTextarea1" rows="5" cols="10"></textarea>
+  </div>
+  </form>
+</div>
+        
+  <br></br> <br></br> <br></br><br></br> <br></br> <br></br>
+  <div align="center">
   <input class="btn btn-primary" type="submit" value="Salvar"/>
   <a class="btn btn-primary" href="menu" role="button">Voltar</a>
-</form>
+  </div>
+ 
+   
+
+        
 </body>
 </html>
