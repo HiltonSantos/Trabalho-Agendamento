@@ -23,4 +23,12 @@ public class AgendamentoDao extends EntityDao<Agendamento>{
 					+ "where a.nome like :nome")
 				.setParameter("nome", "%" + nome + "%").list();
 	}
+        
+        public List<Agendamento> getAll() {
+		return super.getSession()
+				.createQuery("from Agendamento a "
+					+ "left join fetch a.sala sa "
+                                        + "left join fetch a.professor p"
+                                        + "left join fetch a.hora h"   ).list();
+	}
 }

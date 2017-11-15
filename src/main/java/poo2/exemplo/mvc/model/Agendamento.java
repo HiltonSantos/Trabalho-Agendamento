@@ -24,12 +24,12 @@ public class Agendamento {
 	@ManyToOne
 	private Sala sala;
         
+        @ManyToOne
+	private Hora hora;
+        
         @Column
 	private String data ;
-        
-        @Column
-	private String hora;
-        
+                
         @Column
 	private String observacao;
         
@@ -92,19 +92,7 @@ public class Agendamento {
         this.data = data;
     }
 
-    /**
-     * @return the hora
-     */
-    public String getHora() {
-        return hora;
-    }
-
-    /**
-     * @param hora the hora to set
-     */
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
+   
 
     /**
      * @return the observacao
@@ -132,6 +120,20 @@ public class Agendamento {
      */
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    /**
+     * @return the hora
+     */
+    public Hora getHora() {
+        return hora;
+    }
+
+    /**
+     * @param hora the hora to set
+     */
+    public void setHora(Hora hora) {
+        this.hora = hora;
     }
         
         

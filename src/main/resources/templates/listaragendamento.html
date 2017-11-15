@@ -75,10 +75,10 @@
 			</thead>
 			<tbody>
 				<tr th:each="agendamento : ${agendamentos}">
-					<td th:text="${agendamento.professor}"></td>
-					<td th:text="${agendamento.sala}"></td>
+					<td th:text="${agendamento.professor.nome}"></td>
+					<td th:text="${agendamento.sala.nome}"></td>
                                         <td th:text="${agendamento.data}"></td>
-                                        <td th:text="${agendamento.hora}"></td>
+                                        <td th:text="${agendamento.hora.hora}"></td>
                                         <td th:text="${agendamento.observacao}"></td>
                                         <td th:text="${agendamento.status}"></td>
                                         <td><a class="btn btn-default"

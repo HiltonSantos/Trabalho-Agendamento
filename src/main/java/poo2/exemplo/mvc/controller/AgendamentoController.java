@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import poo2.exemplo.mvc.dao.AgendamentoDao;
 import poo2.exemplo.mvc.dao.ProfessorDao;
 import poo2.exemplo.mvc.dao.SalaDao;
+import poo2.exemplo.mvc.dao.HoraDao;
 import poo2.exemplo.mvc.model.Agendamento;
+import poo2.exemplo.mvc.model.Hora;
 import poo2.exemplo.mvc.model.Professor;
 import poo2.exemplo.mvc.model.Sala;
 
@@ -28,6 +30,9 @@ public class AgendamentoController {
         
         @Autowired
 	private SalaDao salaDao;
+        
+        @Autowired
+	private HoraDao horaDao;
 
 	@GetMapping("/novoagendamento")
         public String novoagendamento(Model model) {
@@ -38,6 +43,9 @@ public class AgendamentoController {
        
         List<Sala> salas = salaDao.getAll(Sala.class);
     	model.addAttribute("salas", salas);
+        
+        List<Hora> horas = horaDao.getAll(Hora.class);
+    	model.addAttribute("horas", horas);
         return "novoagendamento";
         
     }
@@ -56,7 +64,7 @@ public class AgendamentoController {
     
     @GetMapping("/listaragendamento")
     public String listaragendamento(Model model) {
-    	List<Agendamento> agendamentos = agendamentoDao.getAll(Agendamento.class);
+    	List<Agendamento> agendamentos = agendamentoDao.getAll();
     	model.addAttribute("agendamentos", agendamentos);
         return "listaragendamento";
     }
