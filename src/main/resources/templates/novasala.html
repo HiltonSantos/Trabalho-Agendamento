@@ -18,7 +18,7 @@
 </head>
 <body>
     
-    <div class="container">
+    <div class="container" >
        <nav class="navbar navbar-expand-lg navbar-dark bg-primary"> 
             <div class="navbar-nav">
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">    
@@ -54,7 +54,7 @@
 
                 </div>
                 
-                <a class="nav-item nav-link" href="#">SAIR</a>
+                <a class="nav-item nav-link" href="index.html">SAIR</a>
             </div>
         </nav>
     </div>
@@ -62,26 +62,28 @@
     
     
     
-    <span class="badge badge-pill badge-success"><label th:text="${message}"></label></span>
+    <br /><br />
        
-   
+   <div class="container" >
 	
 	<form action="#" th:action="@{/salvarsala}" th:object="${sala}" method="post">
             <div align="center"><h2>Cadastro de Salas</h2></div>
+            
+            <br /><br /><br /><br /><br />
    <div class="form-group">
     
-    <div class="form-group col-md-2">   
-        <label for="exampleFormControlInput1">Identificação da Sala: </label>
-        <input type="text" th:field="*{nome}" size="20" class="form-control" id="exampleFormControlInput1" />
+    <div class="form-group col-md-3">   
+        <label for="exampleFormControlInput1"><p><h4>Identificação da Sala: </h4></p></label>
+        <input type="text" th:field="*{nome}" size="30" class="form-control" id="exampleFormControlInput1" />
     </div>
-    <div class="form-group col-md-2">     
-        <label for="exampleFormControlInput1">Vagas(Capac de Alunos): </label>
+    <div class="form-group col-md-3">     
+        <label for="exampleFormControlInput1"><p><h4>Vagas(Capac de Alunos): </h4></p></label>
         <input type="text" th:field="*{vagas}" class="form-control" id="exampleFormControlInput1"/>
     </div>
     
-  </div>   
+    
   
-  <div class="form-group col-md-2">
+  <div class="form-group col-md-3">
     <label for="exampleFormControlSelect1">Status</label>
     <select type="text" th:field="*{status}" class="form-control" id="exampleFormControlSelect1">
       <option value="Ativo">Ativo</option>
@@ -89,18 +91,31 @@
       <option value="Em Manutenção">Em Manutenção</option>
     </select>
   </div>
-  
-  <div class="form-group col-md-2">
-    <label for="exampleFormControlTextarea1">Programas Instalados:</label>
+   </div>
+           <br /><br /><br /><br /><br /><br />
+             
+   <div class="form-group" >        
+       <div class="form-group col-md-4">
+           <label for="exampleFormControlTextarea1"><p><h4>Programas Instalados:</h4></p></label>
     <textarea type="text" th:field="*{progInstalados}" class="form-control" id="exampleFormControlTextarea1" rows="3" cols="50"></textarea>
-  
-    <label for="exampleFormControlTextarea1">Observação: </label>
+  </div>
+  <div class="form-group col-md-4">  
+      <label for="exampleFormControlTextarea1"><p><h4>Observação: </h4></p></label>
     <textarea type="text" th:field="*{observacao}" class="form-control" id="exampleFormControlTextarea1" rows="3" cols="50"></textarea>
   </div>
-  
-  <br></br><br></br>
+   </div>
+         
+                 
+           <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+           <div class=text-center>
   <input class="btn btn-primary" type="submit" value="Salvar"/>
   <a class="btn btn-primary" href="menu" role="button">Voltar</a>
+  <input class="btn btn-primary" type="reset" value="Limpar Campos"/>
+           </div>
 </form>
+    
+    <label th:text="${message}"></label>
+    
+   </div>   
 </body>
 </html>

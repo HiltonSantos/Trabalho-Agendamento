@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,16 +15,7 @@
 <script type="text/javascript" src="/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="/js/custom.js"></script>
 <script type="text/javascript">
-    jQuery(document).ready(function(){
-        jQuery('#login').submit(function(){
-            var u = jQuery('#username').val();
-            var p = jQuery('#password').val();
-            if(u == '' && p == '') {
-                jQuery('.login-alert').fadeIn();
-                return false;
-            }
-        });
-    });
+ 
 </script>
 </head>
 
@@ -32,25 +23,31 @@
 
 <div class="loginpanel">
     <div class="loginpanelinner">
+      
        
-        <form id="login" action="#" method="post">
-           
+   <form action="#" name="form1"> 
+                     
             <div class="inputwrapper animate3 bounceIn">
-                    <a href="index.html"><img src="/img/logo.png" width="156" height="40" alt="" /></a>
-                    <div id="titulo"><h4>Sistema de Agendamento de Salas<h4/><div/>
+                    <a href="login.html"><img src="/img/logo.png" width="156" height="40" alt="" /></a>
+                    <div id="titulo">
+                        <h4>Sistema de Agendamento de Salas</h4>
+                    </div>
             </div>
 	
             <div class="inputwrapper login-alert">
                 <div class="alert alert-error">Nome de usuário inválido</div>
             </div>
             <div class="inputwrapper animate1 bounceIn">
-                <input type="text" name="usuario" id="username" placeholder="Entre com seu usuário" />
+                <input type="text" id="username" name="username" placeholder="Entre com seu usuário" />
             </div>
             <div class="inputwrapper animate2 bounceIn">
-                <input type="password" name="senha" id="password" placeholder="Entre com sua senha" />
+                <input type="password" id="password" name="password" placeholder="Entre com sua senha" />
             </div>
+       
             <div class="inputwrapper animate3 bounceIn">
-                <button name="submit"><a href="menu">Entrar</a></button>
+                
+                <button class="btn btn-primary"  type="button" onclick="logar() ">Logar</button> 
+               
             </div>
             <div class="inputwrapper animate4 bounceIn">
                 <label><input type="checkbox" class="remember" name="signin" /> Lembrar minha senha</label>
@@ -60,9 +57,23 @@
     </div><!--loginpanelinner-->
 </div><!--loginpanel-->
 
-<div class="loginfooter">
-    <p>&copy; 2017. Codetech. All Rights Reserved.</p>
-</div>
 
+ 
+<script language="javascript" type="text/javascript">
+function logar() {
+    var done=0;
+var login = form1.username.value;
+var senha = form1.password.value;
+
+    if (login === "admin" && senha === "admin"){
+        location="menu.html"; 
+    }
+    else if (done === 0) { 
+        alert("Senha ou Usuário inválido.");
+         location="index.html";
+    }    
+}
+</script>
+ 
 </body>
 </html>

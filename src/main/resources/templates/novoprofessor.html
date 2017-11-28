@@ -53,15 +53,15 @@
 
                 </div>
                 
-                <a class="nav-item nav-link" href="#">SAIR</a>
+                <a class="nav-item nav-link" href="index.html">SAIR</a>
             </div>
         </nav>
     </div>
     
     
+    <div class="container">
     
-    
-	<label th:text="${message}"></label>
+	
 	<form action="#" th:action="@{/salvarprofessor}" th:object="${professor}" method="post">
             <div align="center"><h2>Cadastro de Professor</h2></div>
    <div class="form-group">
@@ -94,6 +94,11 @@
   <br></br><br></br>
   <input class="btn btn-primary" type="submit" value="Salvar"/>
   <a class="btn btn-primary" href="menu" role="button">Voltar</a>
+  <input class="btn btn-primary" type="reset" value="Limpar Campos"/>
 </form>
+        
+        <label th:text="${message}"></label>
+        
+    </div>
 </body>
 </html>
