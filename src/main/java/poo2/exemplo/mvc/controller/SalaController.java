@@ -29,7 +29,7 @@ public class SalaController {
     		Model model) {
     	salaDao.create(sala);
     	model.addAttribute("message", 
-    			"Sala criado com sucesso!");
+    			"SALA CRIADO COM SUCESSO!");
         return "novasala";
         
     }
@@ -62,7 +62,7 @@ public class SalaController {
     	if(salas != null)
     		salaDao.delete(salas);
     	model.addAttribute("message", 
-    			"Sala removido com sucesso!");
+    			"SALA REMOVIDA COM SUCESSO!");
     	List<Sala> salass = salaDao.getAll(Sala.class);
     	model.addAttribute("salass", salass);
     	model.addAttribute("salaPesquisa", new Sala());

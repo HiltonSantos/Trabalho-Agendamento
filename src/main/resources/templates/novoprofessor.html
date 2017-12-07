@@ -17,7 +17,7 @@
 </head>
 <body>
     
-    <div class="container">
+    <div class="container" >
        <nav class="navbar navbar-expand-lg navbar-dark bg-primary"> 
             <div class="navbar-nav">
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">    
@@ -56,49 +56,73 @@
                 <a class="nav-item nav-link" href="index.html">SAIR</a>
             </div>
         </nav>
+   
     </div>
     
     
-    <div class="container">
+    <br />
     
-	
-	<form action="#" th:action="@{/salvarprofessor}" th:object="${professor}" method="post">
-            <div align="center"><h2>Cadastro de Professor</h2></div>
-   <div class="form-group">
     
-    <div class="form-group col-md-2">   
-        <label for="exampleFormControlInput1">Nome: </label>
-        <input type="text" th:field="*{nome}" size="200" class="form-control" id="exampleFormControlInput1" />
-    </div>
-    <div class="form-group col-md-2">     
-        <label for="exampleFormControlInput1">Identificação: </label>
-        <input type="text" th:field="*{matricula}" class="form-control" id="exampleFormControlInput1"/>
-    </div>
-    <div class="form-group col-md-2">     
-        <label for="exampleFormControlInput1">Turno: </label>
-        <input type="text" th:field="*{turno}" class="form-control" id="exampleFormControlInput1"/>
-    </div>   
-    <div class="form-group col-md-2">     
-        <label for="exampleFormControlInput1">Disciplinas: </label>
-        <input type="text" th:field="*{disciplinas}" class="form-control" id="exampleFormControlInput1"/>
-    </div>   
-    
-  </div>   
-  
-  
-  <div class="form-group col-md-2">
-    <label for="exampleFormControlTextarea1">Observação: </label>
-    <textarea type="text" th:field="*{observacao}" class="form-control" id="exampleFormControlTextarea1" rows="3" cols="50"></textarea>
-  </div>
-  
-  <br></br><br></br>
-  <input class="btn btn-primary" type="submit" value="Salvar"/>
-  <a class="btn btn-primary" href="menu" role="button">Voltar</a>
-  <input class="btn btn-primary" type="reset" value="Limpar Campos"/>
-</form>
+    <div class="container" >
         
-        <label th:text="${message}"></label>
+        <div class="span12" style="text-align:center; margin: 0 auto;">
+            <legend><h1>Cadastro de Professor</h1></legend>
+        </div>
         
+            <br /><br /><br /><br />
+   
+        <fieldset>
+            <form class="form-horizontal" style="center:800px; margin:0 auto ;" action="#" th:action="@{/salvarprofessor}" th:object="${professor}" method="post">       
+     
+                <div class="form-group col-md-4">
+                  <label  for="exampleFormControlInput1"><p><h4>Nome </h4></p></label>
+                   <input type="text" th:field="*{nome}" rows="3" cols="50" maxlength="100" class="form-control" id="exampleFormControlInput1" />
+                </div>
+                <div class="form-group col-md-4">       
+                   <label  for="exampleFormControlInput1"><p><h4>Identificação:</h4></p></label>
+                   <input  type="text" th:field="*{matricula}" class="form-control" id="exampleFormControlInput1"/>
+                </div>
+                <div class="form-group col-md-4">
+                  <label  for="exampleFormControlInput1"><p><h4>Turno: </h4></p></label>
+                   <input type="text" th:field="*{turno}" rows="3" cols="50" maxlength="100" class="form-control" id="exampleFormControlInput1" />
+                </div>
+                
+                <br /><br /><br /><br /><br /><br /><br /><br />
+                
+                <div class="form-group col-md-4">       
+                   <label  for="exampleFormControlInput1"><p><h4>Disciplinas:</h4></p></label>
+                   <input  type="text" th:field="*{disciplinas}" class="form-control" id="exampleFormControlInput1"/>
+                </div>
+                <div class="form-group col-md-5">  
+                    <label for="exampleFormControlTextarea1"><p><h4>Observação: </h4></p></label>
+                    <textarea type="text" th:field="*{observacao}" class="form-control" id="exampleFormControlTextarea1" rows="3" cols="50"></textarea>
+                </div>
+    
+                <br /><br /><br /><br /><br /><br /><br /><br />
+                
+                <label th:text="${message}" style="color:green" ></label>
+                
+                <br /><br /><br /><br />
+   
+                <div class="span12" style="text-align:center; margin: 0 auto;">
+                  <input class="btn btn-primary medio"  type="submit" value="Salvar"/>
+                  <a class="btn btn-primary medio"  href="menu" role="button"> Voltar</a>
+                  <a class="btn btn-primary medio"  href="novoprofessor" role="button"> Limpar Campos</a>
+                  
+                </div>
+            </form>
+        </fieldset>
     </div>
+    
+    
+
+    
+    <style>
+            
+            .medio {
+                width: 15%;
+            }
+            
+    </style>
 </body>
 </html>

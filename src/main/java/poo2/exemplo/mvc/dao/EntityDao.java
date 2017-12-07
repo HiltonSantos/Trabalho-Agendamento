@@ -15,7 +15,7 @@ public class EntityDao<T> {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-
+        
 	protected Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}

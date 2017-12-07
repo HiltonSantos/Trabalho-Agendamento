@@ -30,7 +30,7 @@ public class ProfessorController {
     		Model model) {
     	professorDao.create(professor);
     	model.addAttribute("message", 
-    			"Professor criado com sucesso!");
+    			"PROFESSOR CRIADO COM SUCESSO!");
         return "novoprofessor";
     }
     
@@ -62,7 +62,7 @@ public class ProfessorController {
     	if(professore != null)
     		professorDao.delete(professore);
     	model.addAttribute("message", 
-    			"Professor removido com sucesso!");
+    			"PROFESSOR REMOVIDO COM SUCESSO!");
     	List<Professor> professores = professorDao.getAll(Professor.class);
     	model.addAttribute("professores", professores);
     	model.addAttribute("professorPesquisa", new Professor());

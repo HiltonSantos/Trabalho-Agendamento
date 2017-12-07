@@ -56,7 +56,7 @@ public class AgendamentoController {
     		Model model) {
     	agendamentoDao.create(agendamento);
     	model.addAttribute("message", 
-    			"Agendamento criado com sucesso!");
+    			"AGENDAMENTO CRIADO COM SUCESSO!");
         return "novoagendamento";
         
     }
@@ -79,7 +79,7 @@ public class AgendamentoController {
     	if(agendamentos != null)
     		agendamentoDao.delete(agendamentos);
     	model.addAttribute("message", 
-    			"Agendamento removido com sucesso!");
+    			"AGENDAMENTO REMOVIDO COM SUCESSO!");
     	List<Agendamento> agendamentoss = agendamentoDao.getAll(Agendamento.class);
     	model.addAttribute("agendamentoss", agendamentoss);
     	model.addAttribute("agendamentoPesquisa", new Agendamento());
